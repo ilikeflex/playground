@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <script data-require="angular.js@1.4.9" data-semver="1.4.9" src="https://code.angularjs.org/1.4.12/angular.js"></script>
+    <script data-require="angular.js@1.4.9" data-semver="1.4.9" src="https://code.angularjs.org/1.4.12/angular-route.js"></script>
+    <!--<link href="style.css" rel="stylesheet" />-->
+    <script src="script.js"></script>
+
+    <script type="text/javascript">
+        angular.element(document.getElementsByTagName('head')).append(angular.element('<base href="' + window.location.pathname + '" />'));
+    </script>
+
+    <script src="characterProps.factory.js"></script>
+    <script src="characterData.factory.js"></script>
+    <script src="character.service.js"></script>
+
+    <script src="character.controller.js"></script>
+    <script src="character.routerconfig.js"></script>
+
+</head>
+<body>
+<h1>AngularJS app</h1>
+
+
+<a href="getCharacters">GetCharacter</a>
+<div ng-view></div>
+
+<div ng-controller="ToddlerCtrl">
+    <h2>Toddlers</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Happy?</th>
+        </tr>
+        <tr ng-repeat="toddler in toddlers">
+            <td>{{toddler.name}}</td>
+            <td>{{toddler.birthday}}</td>
+            <td>{{toddler.happy}}</td>
+        </tr>
+    </table>
+</div>
+</body>
+
+</html>
+

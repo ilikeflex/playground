@@ -1,0 +1,31 @@
+
+<!--
+
+<button ng-click="chrCtrl.debugApp()">Click Me</button>
+
+<select name="repeatSelect" id="repeatSelect" ng-model="chrCtrl.selectedCharacter" ng-change="chrCtrl.loadCharacter()">
+    <option ng-repeat="character in chrCtrl.result" value="{{character}}">{{character.name}}</option>
+</select>
+-->
+
+
+<select ng-options='character.name for character in chrCtrl.result' ng-model="chrCtrl.selectedCharacter"
+        ng-change='chrCtrl.loadCharacter()'></select>
+
+<!--
+<div ng-repeat="film in chrCtrl.films" style=" display: inline-block, width: 150px, height: 100px">
+    <span>{{film.title}}</span> ||   <span>{{film.releaseDate | date : 'EEEE, MMM d yyyy' }} </span><br>
+</div>
+-->
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Release Date</th>
+    </tr>
+    <tr ng-repeat="film in chrCtrl.films" >
+        <td>{{film.title}}</td>
+        <td>{{film.releaseDate | date : 'EEEE, MMM d yyyy' }}</td>
+    </tr>
+</table>
+
